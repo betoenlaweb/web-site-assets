@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;600&display=swap");
+html {
+  scroll-behavior: smooth; }
+
+.load-1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #ffc100;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-out; }
+
+.load-1.active {
+  opacity: 1;
+  pointer-events: all; }
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px; }
+
+header {
+  background: transparent;
+  position: fixed;
+  z-index: 1;
+  width: 100%; }
+
+header .col-sm {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.menu {
+  background-color: #ffc100;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  top: 0;
+  z-index: 2;
+  overflow-x: hidden;
+  -webkit-transition: 0.3s cubic-bezier(0.47, 0, 0.75, 0.72);
+  transition: 0.35s cubic-bezier(0.47, 0, 0.75, 0.72); }
+
+.menu-content ul {
+  position: relative;
+  text-align: start;
+  font-family: 'Fira Code', monospace;
+  font-size: 40px;
+  width: max-content;
+  display: block;
+  margin-top: 85%;
+  margin-left: 25px;
+  line-height: 0.9; }
+  @media (max-width: 360px) {
+    .menu-content ul {
+      margin-top: 75%; } }
+
+@media (min-width: 361px) and (max-width: 425px) {
+  .menu-content ul {
+    margin-top: 80%; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .menu-content ul {
+    margin-top: 55%;
+    font-size: 75px; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-content ul {
+    margin-top: 55%;
+    font-size: 95px;
+    margin-left: 60px; } }
+
+@media (min-width: 1025px) and (max-width: 1380px) {
+  .menu-content ul {
+    margin-top: 35%;
+    margin-left: 60px;
+    font-size: 90px; } }
+
+@media (min-width: 1380px) and (max-width: 1920px) {
+  .menu-content ul {
+    margin-top: 20%;
+    margin-left: 60px;
+    font-size: 90px; } }
+
+.item-menu {
+  opacity: 0; }
+
+.item-menu a {
+  color: #242424; }
+
+.item-menu a:hover {
+  text-decoration: none;
+  color: #fff; }
+
+.close-btn {
+  position: absolute;
+  margin-left: 70%;
+  font-size: 40px;
+  font-family: 'Fira Code', monospace;
+  color: #242424;
+  transition: 0.4s cubic-bezier(0.4, 0, 1, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 1, 1); }
+  @media (max-width: 360px) {
+    .close-btn {
+      margin-left: 85%;
+      opacity: 0; } }
+
+@media (min-width: 361px) and (max-width: 425px) {
+  .close-btn {
+    margin-left: 88%; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .close-btn {
+    margin-left: 85%;
+    margin-top: 5px; } }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .close-btn {
+    margin-left: 90%;
+    margin-top: 20px;
+    font-size: 60px; } }
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .close-btn {
+    margin-left: 90%;
+    margin-top: 20px;
+    font-size: 70px; } }
+
+.close-btn:hover {
+  text-decoration: none;
+  color: #242424; }
+
+.nav-bar {
+  width: 100%;
+  display: inline-flex;
+  align-items: center; }
+
+#logo {
+  margin-left: 500px; }
+  @media (max-width: 360px) {
+    #logo {
+      margin-left: -20px;
+      transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+      margin-top: -10px; } }
+
+@media (min-width: 361px) and (max-width: 425px) {
+  #logo {
+    margin-left: -20px;
+    transform: scale(0.55);
+    -webkit-transform: scale(0.55);
+    margin-top: -10px; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  #logo {
+    margin-left: 2px;
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); } }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  #logo {
+    margin-left: -20px;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8); } }
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+  #logo {
+    margin-left: 50px;
+    margin-top: 25px; } }
+
+.bottom-menu {
+  position: absolute;
+  font-size: 40px;
+  font-family: 'Fira Code', monospace;
+  width: max-content;
+  margin-left: 70%;
+  color: #9e9e9e;
+  margin-top: -45px;
+  opacity: 0.8;
+  transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+  -webkit-transition: 0.3s cubic-bezier(0.4, 0, 1, 1); }
+
+@media (min-width: 361px) and (max-width: 425px) {
+  .bottom-menu {
+    margin-left: 76%;
+    font-size: 40px; } }
+
+@media (min-width: 769px) and (max-width: 1920px) {
+  .bottom-menu {
+    margin-left: 80.5%;
+    margin-top: -30px;
+    font-size: 60px;
+    cursor: pointer; } }
+
+.box {
+  display: grid;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  row-gap: 15px;
+  margin-top: 30%; }
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .box {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    display: flex; } }
+
+@media (min-width: 1024px) and (max-width: 1679px) {
+  .box .box-item {
+    margin-left: 30px; } }
+
+@media (min-width: 1680px) and (max-width: 1920px) {
+  .box .box-item {
+    margin-left: 70px; } }
+
+.box-item {
+  display: inline-grid;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+  -webkit-box-shadow: 0 6px 14px rgba(187, 187, 187, 0.4);
+  box-shadow: 0 6px 14px rgba(187, 187, 187, 0.4); }
+
+a.item-hover {
+  width: auto;
+  height: auto; }
+  @media (max-width: 360px) {
+    a.item-hover {
+      padding: 222px 114px 40px 120px; } }
+
+@media (min-width: 361px) and (max-width: 375px) {
+  a.item-hover {
+    padding: 247px 119px 30px 130px; } }
+
+@media (min-width: 376px) and (max-width: 390px) {
+  a.item-hover {
+    padding: 270px 142px 45px 147px; } }
+
+@media (min-width: 391px) and (max-width: 425px) {
+  a.item-hover {
+    padding: 266px 146px 50px 143px; } }
+
+@media (min-width: 426px) and (max-width: 1920px) {
+  a.item-hover {
+    padding: 326px 164px 56px 190px; } }
+
+.item-hover {
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-right: 0px;
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+.item-hover:hover {
+  opacity: 1;
+  text-decoration: none; }
+
+.item-hover p {
+  width: max-content;
+  height: max-content;
+  margin-top: 44px;
+  position: relative;
+  margin-bottom: 0px;
+  color: #242424;
+  font-family: 'Fira Code', monospace; }
+
+.modall {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-opacity: 0;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.modall:target {
+  -webkit-opacity: 1;
+  opacity: 1;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: +8; }
+
+.modall-content {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  -webkit-opacity: 0;
+  opacity: 0;
+  overflow: hidden; }
+
+@media (min-width: 1380px) and (max-width: 1920px) {
+  .modall-content {
+    display: grid; } }
+
+.modall:target .modall-content {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.22, 1.35);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.22, 1.35);
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
+  z-index: 9999;
+  -webkit-opacity: 1;
+  opacity: 1; }
+
+#video {
+  opacity: 0;
+  text-align: center;
+  margin-top: 15%;
+  overflow-y: scroll;
+  height: 55%; }
+
+@media (min-width: 361px) and (max-width: 375px) {
+  #video {
+    height: 45%; } }
+
+@media (min-width: 376px) and (max-width: 390px) {
+  #video {
+    height: 47%; } }
+
+@media (min-width: 391px) and (max-width: 425px) {
+  #video {
+    height: 55%; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  #video {
+    height: 70%;
+    margin-top: 6%; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #video {
+    height: 75%;
+    margin-top: 2%; } }
+
+@media (min-width: 1380px) and (max-width: 1920px) {
+  #video {
+    margin-top: 5%;
+    height: 80%;
+    width: 45%; } }
+
+#video iframe {
+  padding-bottom: 10px; }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  #video iframe {
+    padding: 50px; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #video iframe {
+    padding: 40px; } }
+
+@media (min-width: 1380px) and (max-width: 1920px) {
+  #video iframe {
+    padding: 30px; } }
+
+#fade-in {
+  opacity: 0; }
+
+.modall-content ul {
+  margin-top: 3%;
+  margin-left: 1px; }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .modall-content ul {
+    margin-left: 50px;
+    margin-top: 3%; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modall-content ul {
+    margin-left: 30px;
+    margin-top: -3%;
+    width: 100%; } }
+
+@media (min-width: 1380px) and (max-width: 1920px) {
+  .modall-content ul {
+    margin-top: 14%;
+    margin-left: 50%;
+    position: absolute;
+    width: 50%; } }
+
+.description {
+  opacity: 0;
+  font-family: 'Fira Code';
+  text-align: justify;
+  width: 90%;
+  margin: 12px; }
+  @media (max-width: 360px) {
+    .description {
+      font-size: 13px; } }
+
+@media (min-width: 361px) and (max-width: 425px) {
+  .description {
+    font-size: 14px; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .description {
+    font-size: 17px; } }
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .description {
+    font-size: 22px; } }
+
+.tittle {
+  opacity: 0;
+  font-family: 'Fira Code';
+  font-weight: 600;
+  font-size: 32px;
+  margin: 10px; }
+
+@media (min-width: 769px) and (max-width: 1920px) {
+  .tittle {
+    font-size: 52px; } }
+
+@media (min-width: 425) and (max-width: 768px) {
+  .tittle {
+    margin-left: 55px; } }
+
+.close-modall {
+  position: absolute;
+  margin-left: 90%;
+  margin-top: 3%;
+  color: #242424; }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .close-modall {
+    z-index: 1; } }
+
+.close-modall:hover {
+  text-decoration: none;
+  color: #333333; }
+
+footer {
+  background: #1f1f1f;
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  margin-top: 50px; }
+
+.background {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .background {
+    margin-top: 10%; } }
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .background {
+    margin-top: 0%; } }
+
+i {
+  color: #8c8c8c;
+  width: 30px;
+  font-size: 30px; }
+
+.icons {
+  margin-right: 20px;
+  margin-top: 45px; }
+
+.brand {
+  color: #565656;
+  font-family: 'Fira Code';
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 50px; }
+
+.about {
+  font-family: 'Fira Code';
+  margin: 12px;
+  text-align: start; }
+  @media (min-width: 768px) {
+    .about {
+      text-align: center;
+      width: 80%;
+      margin: -12% 10% 8% 10%; } }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .about {
+    text-align: center;
+    width: 80%;
+    margin: -12% 10% 20% 10%; } }
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .about {
+    text-align: center;
+    width: 80%;
+    margin: -18% 10% 20% 10%; } }
+
+.about-tittle {
+  font-size: 36px;
+  line-height: 0.9; }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .about-tittle {
+    font-size: 56px;
+    line-height: 2.9; } }
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .about-tittle {
+    font-size: 56px;
+    line-height: 2.9; } }
+
+.about-me {
+  text-align: justify; }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .about-me {
+    font-size: 20px; } }
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .about-me {
+    font-size: 20px; } }

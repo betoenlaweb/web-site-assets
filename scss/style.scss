@@ -1,0 +1,637 @@
+@import "../breakpoints/breakpoints.scss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;600&display=swap');
+
+   
+html {
+    scroll-behavior: smooth;
+}
+
+.load-1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #ffc100;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-out;
+}
+
+.load-1.active {
+    opacity: 1;
+    pointer-events: all;
+    
+}
+
+///////////////////////////////////////////////////////////////      HEADER      //////////////////////////////////////////////////////////////
+
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+header {
+    background: transparent;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+header .col-sm {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+.menu {
+    background-color: #ffc100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    top: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    -webkit-transition: 0.3s cubic-bezier(0.47, 0, 0.75, 0.72);
+    transition: 0.35s cubic-bezier(0.47, 0, 0.75, 0.72);
+    
+}
+
+.menu-content ul {
+    position: relative;
+    text-align: start;
+    font-family: 'Fira Code', monospace;
+    font-size: 40px;
+    width: max-content;
+    display: block;
+    margin-top: 85%;
+    margin-left: 25px;
+    line-height: 0.9;
+
+        @include media ("<=phone") {
+            margin-top: 75%;
+        }
+
+        @include media (">phone", "<=425px") {
+            margin-top: 80%;
+        }
+
+        @include media (">425px", "<=tablet") {
+            margin-top: 55%;
+            font-size: 75px;
+        }
+
+        @include media (">tablet", "<=desktop") {
+            margin-top: 55%;
+            font-size: 95px;
+            margin-left: 60px;
+        }
+
+        @include media (">desktop", "<=1380px") {
+            margin-top: 35%;
+            margin-left: 60px;
+            font-size: 90px;
+        }
+        
+        @include media (">=1380px", "<=LGdesktop") {
+            margin-top: 20%;
+            margin-left: 60px;
+            font-size: 90px;
+        } 
+    
+}
+
+
+
+.item-menu {
+    opacity: 0;
+    
+}
+.item-menu a {
+    color: #242424;
+}
+
+.item-menu a:hover {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.close-btn {
+    position: absolute;
+    margin-left: 70%;
+    font-size: 40px;
+    font-family: 'Fira Code', monospace;
+    color: #242424;
+    transition: 0.4s cubic-bezier(0.4, 0, 1, 1);
+    -webkit-transition: 0.4s cubic-bezier(0.4, 0, 1, 1);
+    
+        @include media ("<=phone") {
+            margin-left: 85%;  
+            opacity: 0;
+
+        }
+
+        @include media (">phone", "<=425px") {
+            margin-left: 88%;   
+        }
+
+        @include media (">425px", "<=tablet") {
+            margin-left: 85%;
+            margin-top: 5px;   
+        }    
+
+        @include media (">tablet", "<desktop") {
+            margin-left: 90%;   
+            margin-top: 20px;
+            font-size: 60px;
+        }
+
+        @include media (">=desktop", "<LGdesktop") {
+            margin-left: 90%;  
+            margin-top: 20px; 
+            font-size: 70px;
+        } 
+}
+
+.close-btn:hover {
+    text-decoration: none;
+    color: #242424;
+}
+
+.nav-bar {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+#logo {
+    margin-left: 500px;
+   
+        @include media ("<=phone") {
+            margin-left: -20px;
+            transform: scale(.5);
+            -webkit-transform: scale(.5);
+            margin-top: -10px;
+        }
+
+        @include media (">phone", "<=425px") {
+            margin-left: -20px;
+            transform: scale(.55);
+            -webkit-transform: scale(.55);
+            margin-top: -10px;
+        }
+
+        @include media (">425px", "<=tablet") {
+            margin-left: 2px;
+            transform: scale(.7);
+            -webkit-transform: scale(.7);
+        }    
+
+        @include media (">tablet", "<desktop") {
+            margin-left: -20px;
+            transform: scale(.8);
+            -webkit-transform: scale(.8);   
+        }
+
+        @include media (">=desktop", "<LGdesktop") {
+            margin-left: 50px;
+            margin-top: 25px;  
+        }
+
+}
+
+.bottom-menu {
+    position: absolute;
+    font-size: 40px;
+    font-family: 'Fira Code', monospace;
+    width: max-content;
+    margin-left: 70%;
+    color: #9e9e9e;
+    margin-top: -45px;
+    opacity: 0.8;
+    transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+    -webkit-transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+    
+        @include media (">phone", "<=425px") {
+            margin-left: 76%;
+            font-size: 40px;
+        }
+
+        @include media (">tablet", "<=LGdesktop") {
+            margin-left: 80.5%;
+            margin-top: -30px;
+            font-size: 60px;
+            cursor: pointer;
+    }
+
+}
+
+///////////////////////////////////////////////////////////////      CONTENT      //////////////////////////////////////////////////////////////
+
+.box {
+    display: grid;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    row-gap: 15px;
+    margin-top: 30%;
+    
+        @include media (">=desktop", "<=LGdesktop") {
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;  
+            display: flex;
+        }     
+        
+}
+
+.box .box-item {
+
+        @include media (">=desktop", "<1680px") {
+            margin-left: 30px;  
+        }
+
+        @include media (">=1680px", "<=LGdesktop") {
+            margin-left: 70px;
+        }
+}
+
+.box-item {
+    display: inline-grid;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    -webkit-box-shadow: 0 6px 14px rgba(187,187,187,0.4);
+    box-shadow: 0 6px 14px rgba(187,187,187,0.4);
+}
+
+a.item-hover {
+    width: auto;
+    height: auto;
+
+        @include media ("<=phone") {
+            padding: 222px 114px 40px 120px;
+        }
+
+        @include media (">phone", "<=375px") {
+            padding: 247px 119px 30px 130px;
+        }
+
+        @include media (">375px", "<=390px") {
+            padding: 270px 142px 45px 147px; 
+        }
+
+        @include media (">390px", "<=425px") {
+            padding: 266px 146px 50px 143px;
+        
+        }
+
+        @include media (">425px", "<=LGdesktop") {
+            padding: 326px 164px 56px 190px;
+        }
+
+}
+
+.item-hover {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-right: 0px;
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);    
+}
+
+.item-hover:hover {
+    opacity: 1; 
+    text-decoration: none;
+}
+
+.item-hover p {
+    width: max-content;
+    height: max-content;
+    margin-top: 44px;
+    position: relative;
+    margin-bottom: 0px;
+    color: #242424;
+    font-family: 'Fira Code', monospace;
+}
+
+.modall {
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-opacity: 0;
+    opacity: 0;
+    z-index: -1;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modall:target {
+    -webkit-opacity: 1;
+    opacity: 1;
+    -webkit-transition: all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+    z-index: +8;
+  }
+  
+.modall-content {
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    -webkit-opacity: 0;
+    opacity: 0;
+    overflow: hidden;
+
+        @include media (">=1380px", "<=LGdesktop") {
+            display: grid;
+        }
+  }
+ 
+  .modall:target .modall-content {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.22, 1.35);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.22, 1.35);
+    -webkit-transition-delay: .3s;
+    transition-delay: .3s;
+    z-index: 9999;
+    -webkit-opacity: 1;
+    opacity: 1;
+  }
+  
+#video {
+    opacity: 0;
+    text-align: center;
+    margin-top: 15%;
+    overflow-y: scroll;
+    height: 55%;
+
+        @include media (">phone", "<=375px") {
+            height: 45%;
+        }
+
+        @include media (">375px", "<=390px") {
+            height: 47%;
+        }
+
+        @include media (">390px", "<=425px") {
+            height: 55%;
+        }
+
+        @include media (">425px", "<=768px") {
+            height: 70%;
+            margin-top: 6%;
+        } 
+
+        @include media (">768px", "<=desktop") {
+            height: 75%;
+            margin-top: 2%;
+        } 
+
+        @include media (">=1380px", "<=LGdesktop") {
+            margin-top: 5%;
+            height: 80%;
+            width: 45%;
+        } 
+  }
+
+  #video iframe {
+    padding-bottom: 10px;
+
+        @include media (">425px", "<=tablet") {
+            padding: 50px;
+        } 
+
+        @include media (">tablet", "<=desktop") {
+            padding: 40px;
+        } 
+
+        @include media (">=1380px", "<=LGdesktop") {
+            padding: 30px;
+        }
+  }
+
+#fade-in {
+    opacity: 0; 
+    
+  }
+
+.modall-content ul {
+    margin-top: 3%;
+    margin-left: 1px;
+
+    @include media (">425px", "<=tablet") {
+        margin-left: 50px;
+        margin-top: 3%;
+
+    }
+
+    @include media (">tablet", "<=desktop") {
+        margin-left: 30px;
+        margin-top: -3%;
+        width: 100%;
+    }
+
+    @include media (">=1380px", "<=LGdesktop") {
+        margin-top: 14%;
+        margin-left: 50%;
+        position: absolute;
+        width: 50%;
+    }
+
+  }
+
+.description {
+    opacity: 0;
+    font-family: 'Fira Code';
+    text-align: justify;
+    width: 90%; 
+    margin: 12px;
+    
+
+        @include media ("<=phone") {
+            font-size: 13px;
+                
+        }
+
+        @include media (">phone", "<=425px") {
+            font-size: 14px;
+        }
+
+        @include media (">425px", "<=768px") {
+            font-size: 17px;
+        }
+
+        @include media (">=desktop", "<=LGdesktop") {
+            font-size: 22px;
+        }
+
+
+    
+       
+}
+
+.tittle {
+    opacity: 0;
+    font-family: 'Fira Code';
+    font-weight: 600;
+    font-size: 32px;
+    margin: 10px;  
+    
+    @include media (">tablet", "<=LGdesktop") {
+        font-size: 52px;
+    }
+
+    @include media (">425", "<=tablet") {
+        margin-left: 55px;
+    }
+}
+    
+.close-modall {
+    position: absolute;
+    margin-left: 90%;
+    margin-top: 3%;
+    color: #242424;
+
+    @include media (">768px", "<=desktop") {
+        z-index: 1;
+    } 
+    
+}
+
+.close-modall:hover {
+    text-decoration: none;
+    color: #333333;
+}
+
+
+
+///////////////////////////////////////////////////////////////      FOOTER      //////////////////////////////////////////////////////////////
+
+footer {
+    background: #1f1f1f;
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    margin-top: 50px;
+
+    
+
+}
+
+.background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    @include media (">=desktop", "<1200px") {
+        margin-top: 10%;
+    } 
+
+    @include media (">=1200px", "<=LGdesktop") {
+        margin-top: 0%;
+    } 
+}
+
+i {
+    color: #8c8c8c;
+    width: 30px;
+    font-size: 30px;
+}
+
+.icons {
+    margin-right: 20px;
+    margin-top: 45px; 
+}
+
+.brand {
+    color: #565656;
+    font-family: 'Fira Code';
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
+    
+}
+
+
+
+
+///////////////////////////////////////////////////////////////      ABOUT PAGEEEE      //////////////////////////////////////////////////////////////
+
+.about {
+    font-family: 'Fira Code';
+    margin: 12px;
+    text-align: start;
+
+        @include media (">=tablet") {
+            text-align: center;
+            width: 80%;
+            margin: -12% 10% 8% 10%;
+        }
+
+        @include media (">=desktop", "<1200px") {
+            text-align: center;
+            width: 80%;
+            margin: -12% 10% 20% 10%;
+        } 
+
+        @include media (">=1200px", "<=LGdesktop") {
+            text-align: center;
+            width: 80%;
+            margin: -18% 10% 20% 10%;
+        }  
+}
+
+.about-tittle {
+
+    font-size: 36px;
+    line-height: 0.9;
+
+        @include media (">=tablet") {
+
+        }
+
+        @include media (">=desktop", "<1200px") {
+            font-size: 56px;
+            line-height: 2.9;
+        }
+
+        @include media (">=1200px", "<=LGdesktop") {
+            font-size: 56px;
+            line-height: 2.9;
+        } 
+}
+
+
+.about-me {
+    text-align: justify;
+
+        @include media (">=desktop", "<1200px") {
+            
+            font-size: 20px;
+        }
+        @include media (">=1200px", "<=LGdesktop") {
+            
+            font-size: 20px;
+        } 
+}
